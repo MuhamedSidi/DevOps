@@ -1,0 +1,35 @@
+vagrant init : used to start a vagrant project . 
+it will create a vagrant file which will be the manager file for all the virtuel machin . 
+2) choose box to use for vagrant . 
+from vagrantup/box
+copy the commend from there
+3) to satrt vagrant : vagrant up 
+4) to list the box that you have running : 
+vagrant  box list
+5) you can ssh to the virtuel machin : 
+ vagrant ssh
+6) 
+vagrant box remove 
+vagrant status 
+vagrant halt 			: stop the machin 
+vagrant provision :update changes from you file while it's running .
+vagrant reload 
+7) now for the vm machin that you want to work on , you can add some script on it via the vagrant file. 
+creat a script shell file = script.sh 
+add the script to your file . 
+once it's done then point your vagrnat file on the script file .
+config.vm.provision:sehll, path:"script.sh" 
+
+
+the idea of those script is to make run your programme automaticaly once the machin is running . 
+to run sepecific app on the Vagrant VM you can add your commed to the script.sh file 
+and then forward your app port in the vagrant vm file. 
+config.vm.provision:sehll, path:"script.sh" 
+config.vm.network "forwarded_port", guest: 80, host:8080 
+
+
+========
+you can also genrate your vagrant file online .
+so if you want to select how much RAM ,CPU, disque the you machin shoul dget you can do that . 
+=======
+Note : vagrant will automaticly delete evry thing that you do on the VM once it closed . 
